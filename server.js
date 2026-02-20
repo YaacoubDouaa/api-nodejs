@@ -85,4 +85,8 @@ app.get('/health', (req, res) => {
         uptime: process.uptime()
     });
 });"// Modification temporaire" 
-"// Fonction utilitaire" 
+"// Fonction utilitaire"
+// Route d'accueil
+app.get('/', (req, res) => {
+    res.json({ message: "API Scolaire v2.0 - par Bob" });
+});
