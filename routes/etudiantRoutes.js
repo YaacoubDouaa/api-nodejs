@@ -42,3 +42,13 @@ router.route('/:id')
 
 // Exporter le routeur
 module.exports = router;
+const express = require('express');
+const router = express.Router();
+const etudiantController = require('../controllers/etudiantController');
+
+// ... vos routes existantes ...
+
+// Route pour obtenir les étudiants triés par moyenne
+router.get('/sorted', etudiantController.getEtudiantsSorted);
+
+module.exports = router;
