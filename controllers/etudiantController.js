@@ -222,3 +222,13 @@ exports.searchEtudiants = async (req, res) => {
         });
     }
 };
+// Fonction pour obtenir les étudiants triés par moyenne décroissante
+exports.getEtudiantsSorted = async (req, res) => {
+    try {
+        // Trier par moyenne décroissante (-1 = décroissant, 1 = croissant)
+        const etudiants = await Etudiant.find().sort({ moyenne: -1 });
+        res.status(200).json(etudiants);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
